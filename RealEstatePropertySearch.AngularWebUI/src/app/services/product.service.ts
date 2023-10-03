@@ -15,12 +15,12 @@ constructor(
 ) { }
 
 getProducts(): Observable<ProductListDto>{
-  let newPath = environment.production + "products/getall";
+  let newPath = environment.apiUrl + "products/getall";
   return this.httpClient.get<ProductListDto>(newPath);
 }
 
 getProductByTitle(title:string): Observable<ProductDto>{
-  let newPath = environment.production + "products/getByTitle?title=" + title;
+  let newPath = environment.apiUrl + "products/getByTitle?title=" + title;
   return this.httpClient.get<ProductDto>(newPath);
 }
 }
